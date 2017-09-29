@@ -1,5 +1,10 @@
 package com.kforce.pojo;
 
+/***
+ * Author
+ * John Mari D. Hinolan
+ * 
+ * ***/
 public class Person {
 	
 	private String lastName = "default";
