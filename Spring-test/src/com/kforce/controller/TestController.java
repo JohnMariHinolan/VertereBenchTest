@@ -9,17 +9,32 @@ import javax.servlet.ServletContext;
 import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import com.kforce.config.ConfigObj;
+import com.kforce.service.TestServiceInterface;
+
 @Controller
 public class TestController {
 
 	@Autowired
 	ServletContext context ; 
+	@Autowired
+	@Qualifier("test2")
+	TestServiceInterface tesService;
+	@Autowired
+	ConfigObj configObj;
+	
+	@RequestMapping(value = "/testPrint")
+	public void autowireTest() {
+		System.out.println("Message : " + configObj.getMsgTest());
+		tesService.print();
+	}
 	
 	//@RequestMapping("/DownloadTest")
 	@RequestMapping(value = "/DownloadTest/{PathVariable}" ,method= RequestMethod.GET,produces = MediaType.APPLICATION_OCTET_STREAM_VALUE)

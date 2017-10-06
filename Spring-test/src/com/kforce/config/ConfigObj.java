@@ -11,6 +11,15 @@ import com.kforce.pojo.WelcomePage;
 public class ConfigObj {
 
 	
+	private String msgTest;
+	
+	@Bean
+	@Scope("session")
+	public String getMsgTest() {
+		msgTest = System.currentTimeMillis() + "";
+		return msgTest;
+	}
+	
 	@Bean	
 	@Scope("session")
 	public WelcomePage getWelcomePage() {

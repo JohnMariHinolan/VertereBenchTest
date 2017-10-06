@@ -1,8 +1,12 @@
 package com.kforce.service;
-
+// should be interface
 public class UserService {
 
 	// dao should be here
+	
+	/**
+	 * Check if 
+	 * **/
 	boolean isCaseSensitive = false;
 	
 	public boolean verifyPasswordMatch(String password, String confirmPassword) {

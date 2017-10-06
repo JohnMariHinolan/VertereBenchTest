@@ -12,9 +12,6 @@ public class Person {
 	private String firstName;
 	private String role;
 	
-
-	
-	
 	
 	public String getLastName() {
 		return lastName;
